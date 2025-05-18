@@ -67,7 +67,7 @@ Mesh Mesh::Cube(ObjectNameTag tag, double size) {
             { Vec4D{1.0, 0.0, 1.0, 1.0},    Vec4D{0.0, 0.0, 1.0, 1.0},    Vec4D{0.0, 0.0, 0.0, 1.0} },
             { Vec4D{1.0, 0.0, 1.0, 1.0},    Vec4D{0.0, 0.0, 0.0, 1.0},    Vec4D{1.0, 0.0, 0.0, 1.0} },
     };
-    cube.setColor(sf::Color(255, 245, 180));
+    cube.setColor(sf::Color(0, 180, 180));
 
     return cube *= Matrix4x4::Scale(Vec3D(size, size, size))*Matrix4x4::Translation(Vec3D(-0.5, -0.5, -0.5));
 }

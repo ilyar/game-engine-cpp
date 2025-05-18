@@ -23,11 +23,15 @@ std::vector<Triangle> Camera::project(std::shared_ptr<Mesh> mesh) {
     Matrix4x4 V = Matrix4x4::View(left(), up(), lookAt(), position());
 
     for (auto &t : mesh->triangles()) {
-        Triangle projected;
-
-        // TODO: implement (lessons 2, 3, 4)
-
-        _triangles.emplace_back(projected);
+        // TODO: implement (lessons 3, 4)
+        Triangle projected = t * M * _SP;
+        Triangle projected_normalized = Triangle(
+            projected[0] / projected[0].w(),
+            projected[1] / projected[1].w(),
+            projected[2] / projected[2].w(),
+            t.color()
+        );
+        _triangles.emplace_back(projected_normalized);
     }
 
     return this->_triangles;
