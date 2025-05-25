@@ -13,8 +13,9 @@ class Vec2D final {
 private:
     std::array<double, 2> _arr_point{};
 
-    static bool isNear(double a, double b);
 public:
+    static bool isNear(double a, double b);
+
     Vec2D() = default;
 
     Vec2D(const Vec2D &vec);
