@@ -111,7 +111,7 @@ void Screen::drawTriangle(const Triangle &triangle) {
     // Раскомментируйте эту строку для отображения границ треугольников
     //           |
     //          \/
-    //_window->draw(lines, 4, sf::LineStrip);
+    _window->draw(lines, 4, sf::LineStrip);
 
     _window->draw(tris, 3, sf::Triangles);
 }

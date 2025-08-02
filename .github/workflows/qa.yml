@@ -39,21 +39,21 @@ jobs:
 
       - name: Build LESSON 2
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_2
-# TODO implement LESSON 3
-#      - name: Build LESSON 3
-#        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_3
-# TODO implement LESSON 4
-#      - name: Build LESSON 4
-#        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_4
-# TODO implement LESSON 5
-#      - name: Build LESSON 5
-#        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_5
-# TODO implement LESSON 6
-#      - name: Build LESSON 6
-#        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_6
-# TODO implement LESSON 7
-#      - name: Build LESSON 7
-#        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_7
+
+      - name: Build LESSON 3
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_3
+
+      - name: Build LESSON 4
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_4
+
+      - name: Build LESSON 5
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_5
+
+      - name: Build LESSON 6
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_6
+
+      - name: Build LESSON 7
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_7
 # TODO implement LESSON 8
 #      - name: Build LESSON 8
 #        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_8

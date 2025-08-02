@@ -11,15 +11,15 @@ Plane::Plane(const Vec3D &N, const Vec3D &P) : _normal(N.normalized()), _point(P
 }
 
 double Plane::distance(const Vec3D &point) const {
-    // TODO: implement (lesson 4)
-    return 0;
+    
+    return point.dot(_normal) - _point.dot(_normal);
 }
 
 std::pair<Vec3D, double> Plane::intersection(const Vec3D &start, const Vec3D &end) const {
-    double k;
-    Vec3D res;
 
-    // TODO: implement (lesson 4)
+    double s_dot_n = start.dot(_normal);
+    double k = (s_dot_n - _point.dot(_normal)) / (s_dot_n - end.dot(_normal));
+    Vec3D res = start + (end - start) * k;
 
     return std::make_pair(res, k);
 }
@@ -44,15 +44,36 @@ std::vector<Triangle> Plane::clip(const Triangle &tri) const {
     }
 
     if (insidePoints.size() == 1) {
-        // TODO: implement (lesson 4)
+        auto intersect1 = intersection(insidePoints[0], outsidePoints[0]);
+        auto intersect2 = intersection(insidePoints[0], outsidePoints[1]);
+
+        result.emplace_back(insidePoints[0].makePoint4D(),
+                            intersect1.first.makePoint4D(),
+                            intersect2.first.makePoint4D(),
+                            tri.color());
+
+        return result;
     }
 
     if (insidePoints.size() == 2) {
-        // TODO: implement (lesson 4)
+        auto intersect1 = intersection(insidePoints[0], outsidePoints[0]);
+        auto intersect2 = intersection(insidePoints[1], outsidePoints[0]);
+
+        result.emplace_back(insidePoints[0].makePoint4D(),
+                            intersect1.first.makePoint4D(),
+                            insidePoints[1].makePoint4D(),
+                            tri.color());
+
+        result.emplace_back(intersect1.first.makePoint4D(),
+                            intersect2.first.makePoint4D(),
+                            insidePoints[1].makePoint4D(),
+                            tri.color());
+
+        return result;
     }
 
     if (insidePoints.size() == 3) {
-        // TODO: implement (lesson 4)
+        result.emplace_back(tri);        
     }
 
     return result;

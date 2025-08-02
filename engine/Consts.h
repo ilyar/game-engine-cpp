@@ -6,6 +6,7 @@
 #define SHOOTER_CONSTS_H
 
 #include <SFML/Graphics.hpp>
+#include <cstdint>
 
 #include <linalg/Vec2D.h>
 
