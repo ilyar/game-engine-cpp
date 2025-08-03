@@ -37,9 +37,9 @@ int main() {
      * TODO: implement translate, rotate and scale animations
      * You should work with the following file:
      *
-     * engine/animation/ATranslate.cpp
-     * engine/animation/ARotate.cpp
-     * engine/animation/AScale.cpp
+     * engine/animation/ATranslate.h
+     * engine/animation/ARotate.h
+     * engine/animation/AScale.h
      *
      * If you do it right, you will see sequence of 3 animation (translation, rotation and scaling)
      *

@@ -54,6 +54,6 @@ jobs:
 
       - name: Build LESSON 7
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_7
-# TODO implement LESSON 8
-#      - name: Build LESSON 8
-#        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_8
+
+      - name: Build LESSON 8
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel $(nproc) --target LESSON_8
